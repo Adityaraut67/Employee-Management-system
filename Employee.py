@@ -110,7 +110,7 @@ class Employee:
         if self.eid_var.get() == "" or self.name_var.get() == "":
             messagebox.showerror("Error", "All fields are required!")
             return
-        con = pymysql.connect(host="localhost", user="root", password="Asraut@123", database="EMS")
+        con = pymysql.connect(host="localhost", user="root", password="Your-Password", database="EMS")
         cur = con.cursor()
         cur.execute("INSERT INTO Employee2 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", (
             self.eid_var.get(), self.name_var.get(), self.email_var.get(), self.gender_var.get(),
@@ -126,7 +126,7 @@ class Employee:
         
 
     def fetch_data(self):
-        con = pymysql.connect(host="localhost", user="root", password="Asraut@123", database="EMS")
+        con = pymysql.connect(host="localhost", user="root", password="Your-Password", database="EMS")
         cur = con.cursor()
         cur.execute("SELECT * FROM Employee2")
         rows = cur.fetchall()
@@ -159,7 +159,7 @@ class Employee:
         self.salary_var.set(row[9])
 
     def update_data(self):
-        con = pymysql.connect(host="localhost", user="root", password="Asraut@123", database="EMS")
+        con = pymysql.connect(host="localhost", user="root", password="Your-Password", database="EMS")
         cur = con.cursor()
         cur.execute("""UPDATE Employee2 SET name=%s, email=%s, gender=%s, Contact=%s, dob=%s, Address=%s,
                        department=%s, joining_date=%s, salary=%s WHERE eid=%s""", (
@@ -172,7 +172,7 @@ class Employee:
         messagebox.showinfo("Success", "Employee details updated successfully")
 
     def delete_data(self):
-        con = pymysql.connect(host="localhost", user="root", password="Asraut@123", database="EMS")
+        con = pymysql.connect(host="localhost", user="root", password="Your-Password", database="EMS")
         cur = con.cursor()
         cur.execute("DELETE FROM Employee2 WHERE eid=%s", (self.eid_var.get(),))
         con.commit()
@@ -181,7 +181,7 @@ class Employee:
         self.clear()
 
     def search_data(self):
-        con = pymysql.connect(host="localhost", user="root", password="Asraut@123", database="EMS")
+        con = pymysql.connect(host="localhost", user="root", password="Your-Password", database="EMS")
         cur = con.cursor()
         cur.execute(f"SELECT * FROM Employee2 WHERE {self.search_by.get()} LIKE %s", ('%' + self.search_txt.get() + '%',))
         rows = cur.fetchall()

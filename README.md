@@ -33,6 +33,7 @@ A desktop GUI application to manage employee records using Python's Tkinter for 
 
 
 
+
  ⚙️ How to Set Up and Run
 
  ✅ 1. Clone the Repository
@@ -41,16 +42,20 @@ A desktop GUI application to manage employee records using Python's Tkinter for 
 git clone https://github.com/your-username/Employee-Management-system.git
 cd Employee-Management-system
 
+
+
 ✅ 2. Install Dependencies
 Make sure you have pymysql installed:
 
 pip install pymysql
 
+
+
 ✅ 3. Set Up the MySQL Database
 Open MySQL.
 
 Create the database and table:
-
+```
 CREATE DATABASE EMS;
 USE EMS;
 CREATE TABLE Employee2 (
@@ -65,7 +70,11 @@ CREATE TABLE Employee2 (
     joining_date DATE,
     salary FLOAT
 );
+```
 Update your MySQL credentials in the code if needed (e.g., user="root", password="your_password").
+
+
+
 
 ✅ 4. Run the Application
 
@@ -73,13 +82,19 @@ Update your MySQL credentials in the code if needed (e.g., user="root", password
 python main.py
 The application window should open, allowing you to add and manage employee records.
 
+
+
 📁 File Structure
+```
 
 Employee-Management-system/
 │
 ├── main.py         # Main Python script
 ├── README.md       # Project documentation
 └── ..
+```
+
+
 
 🛡️ Notes
 Make sure MySQL is running when using the app.
@@ -88,9 +103,13 @@ You can customize the theme, add validations, or implement export-to-CSV as enha
 
 Passwords in the code should be managed securely (avoid hardcoding in real-world apps).
 
+
+
 👨‍💻 Developed By
 🚀 Aditya Raut
 📌 [Aditya Raut - GitHub Profile](https://github.com/Adityaraut67)
+
+
 
 
  🚀 Future Enhancements
@@ -100,17 +119,22 @@ Here are some planned or possible improvements to expand the functionality and u
 - ✅Login System  
   Add user authentication (admin/staff roles) to restrict access to employee data.
 
+
 - ✅Export to Excel/CSV
   Allow exporting employee records into CSV or Excel formats for reports and backups.
+
 
 - ✅Search Filters & Sorting 
   Advanced filters (by department, date range, salary range) and table column sorting.
 
+
 - ✅Image Upload  
   Enable uploading and displaying employee profile pictures.
 
+
 - ✅PDF Report Generation  
   Generate printable PDF reports of employee data using libraries like `reportlab` or `fpdf`.
+
 
 - ✅Data Validation 
   Add robust input validation (e.g., email format, contact number length, salary range).
